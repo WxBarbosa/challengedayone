@@ -27,3 +27,6 @@ import { BottomComponent } from './shared/bottom/bottom.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+//3249
