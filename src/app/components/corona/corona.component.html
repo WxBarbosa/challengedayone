@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="datatable-country">
+    <div class="form-row justify-content-center">
+      <form name="formSearchCountry" [formGroup]="formSearchCountry">
+        <div class="form-group">
+          <label for="countries-list">Países</label>
+          <select id="countries-list" class="custom-select" (change)="formSearchCountry.valid && onSubmit()" formControlName="countryCode" name="country">
+            <option value="null" selected>Selecione</option>
+            <option *ngFor="let country of countryList" value="{{country.alpha2Code}}">
+              {{country.name}}
+            </option>
+          </select>
+          <div *ngIf="!formSearchCountry.get('countryCode').valid && !formSearchCountry.get('countryCode').errors">Requerido</div>
+        </div>
+      </form>
+    </div>
+
+    <div class="row justify-content-center latest-info-cards">
+      <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+          <div class="card-header text-white">Confirmeds</div>
+          <div class="card-body">
+            <p class="card-text text-white">{{latestInfoCards.confirmed}}</p>
+          </div>
+        </div>
+      </div> 
+      
+      <div class="col-md-3">
+        <div class="card text-white bg-danger mb-3">
+          <div class="card-header text-white">Deaths</div>
+          <div class="card-body">
+            <p class="card-text text-white">{{latestInfoCards.deaths}}</p>
+          </div>
+        </div>
+      </div> 
+
+      <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+          <div class="card-header text-white">Recovereds</div>
+          <div class="card-body">
+            <p class="card-text text-white">{{latestInfoCards.recovered}}</p>
+          </div>
+        </div>
+      </div> 
+    </div>  
+    
+    <div class="row">
+      <div class="col-md-12">
+        <table id="table-result" class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Country</th>
+              <th scope="col">Province</th>
+              <th scope="col">Confirmeds</th>
+              <th scope="col">Deaths</th>
+              <th scope="col">Recovered</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let location of locationList">
+            <tr>
+              <td scope="row">{{location.id}}</td>
+              <td>{{location.country}}</td>
+              <td>{{location.province=="" ? "Não informado" : location.province}}</td>
+              <td>{{location.latest.confirmed}}</td>
+              <td>{{location.latest.deaths}}</td>
+              <td>{{location.latest.recovered}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>   
+
+  </div>
+</div>

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BottomComponent implements OnInit {
 
+  public today : Date = new Date();
+
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,20 @@
-.navbar-light .navbar-brand {
+.datatable-country{
+    margin-top: 8em;
+}
+
+.latest-info-cards > div .card{
+  max-width: 10rem;
+  min-width: 8rem;
+}
+
+
+
+/* HEADER IMPORTANT */
+.navbar-light {
+  background-color: black;
+}
+
+  .navbar-light .navbar-brand {
     color: #fff;
     font-size: 25px;
     text-transform: uppercase;
@@ -23,10 +39,6 @@
   
   .navbar-nav {
     text-align: center;
-  }
-
-  .navbar-light {
-    background-color: rgb(50, 202, 189);
   }
   
   .nav-link {
@@ -100,3 +112,4 @@
       border-radius: 2vh;
     }
   }
+
