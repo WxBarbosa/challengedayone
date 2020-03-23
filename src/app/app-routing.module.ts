@@ -4,7 +4,8 @@ import { CoronaComponent } from './components/corona/corona.component';
 
 const routes: Routes = [
   { path: '', component: CoronaComponent },
-  { path: 'corona', component: CoronaComponent}
+  { path: 'corona', component: CoronaComponent},
+  { path: 'locations', component: CoronaComponent}
 ];
 
 @NgModule({
